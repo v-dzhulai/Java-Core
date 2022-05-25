@@ -8,9 +8,13 @@ public class Main {
     }
 
     public static String createDailyPlan(String[] plans) {
-        StringBuilder str = new StringBuilder().append("My plans: \n");
+        if (plans.length == 0) {
+            return "My plans:";
+        }
 
-        for(int i = 0; i < plans.length; i++) {
+        StringBuilder str = new StringBuilder().append("My plans:\n");
+
+        for (int i = 0; i < plans.length; i++) {
             str.append(i + 1 + ".) " + plans[i]);
             str.append(i == plans.length - 1 ? ";" : ";\n");
         }
