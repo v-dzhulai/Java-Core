@@ -1,10 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        Robot robot1 = new Robot(Direction.LEFT, 10, 12);
+        Robot robot1 = new Robot(Direction.LEFT, -2, -7);
 
-        System.out.format("Start: X - %s, Y - %S\n", robot1.getX(), robot1.getY());
-        moveRobot(robot1, -13, -18);
-        System.out.format("End:   X - %s, Y - %S\n", robot1.getX(), robot1.getY());
+        System.out.format("Start: X = %s, Y = %S\n", robot1.getX(), robot1.getY());
+        moveRobot(robot1, 13, 18);
+        System.out.format("End:   X = %s, Y = %S\n", robot1.getX(), robot1.getY());
     }
 
     public static void moveRobot(Robot robot, int toX, int toY) {
@@ -18,7 +18,7 @@ public class Main {
                 robot.turnLeft();
             }
 
-            while (robot.getX() < toX) {
+            while (toX < robot.getX()) {
                 robot.stepForward();
             }
         }
@@ -28,7 +28,7 @@ public class Main {
                 robot.turnRight();
             }
 
-            while (robot.getX() > toX) {
+            while (toX > robot.getX()) {
                 robot.stepForward();
             }
         }
@@ -38,7 +38,7 @@ public class Main {
                 robot.turnLeft();
             }
 
-            while (robot.getY() < toY) {
+            while (toY < robot.getY()) {
                 robot.stepForward();
             }
         }
@@ -48,7 +48,7 @@ public class Main {
                 robot.turnRight();
             }
 
-            while (robot.getY() > toY) {
+            while (toY > robot.getY()) {
                 robot.stepForward();
             }
         }
