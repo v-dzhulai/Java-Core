@@ -2,7 +2,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(toBinaryString(2));
+        System.out.println(toBinaryString(10));
     }
 
     public static String toBinaryString(int value) {
@@ -14,6 +14,8 @@ public class Main {
             num /= 2;
         }
 
-        return value == 0 ? "0" : str.toString();
+        String result = str.reverse().toString();
+
+        return value <= 0 ? "0" : result.substring(result.indexOf("1"));
     }
 }
